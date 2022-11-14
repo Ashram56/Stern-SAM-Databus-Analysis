@@ -1,0 +1,20 @@
+
+From the analysis of the schematics (see other file)
+
+IOSTB controls if decoding is taking place
+
+A3 A2 A1 A0 = SOL A / SOL B / SOL C / FLSH_LMP / NA / STATUS / AUX_DRV / AUX_IN / LMP_STB / AUX_LMP / LMP_DRV / Clk_input aux
+
+0000 = 1 0 0 0 0 0 0 0 0 0 0 0
+0001 = 0 1 0 0 0 0 0 0 0 0 0 0
+0010 = 0 0 1 0 0 0 0 0 0 0 0 0
+0011 = 0 0 0 1 0 0 0 0 0 0 0 0
+0100 = 0 0 0 0 1 0 0 0 0 0 0 0
+0101 = 0 0 0 0 0 1 0 0 0 0 0 0
+0110 = 0 0 0 0 0 0 1 0 0 0 0 0
+0111 = 0 0 0 0 0 0 0 1 0 0 0 0
+1000 = 0 0 0 0 0 0 0 0 1 0 0 0
+1001 = 0 0 0 0 0 0 0 0 0 1 0 0
+1010 = 0 0 0 0 0 0 0 0 0 0 1 0
+1011 = 0 0 0 0 0 0 0 0 0 0 0 1
+
