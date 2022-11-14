@@ -1,0 +1,50 @@
+Analysis of Stern SAM schematics
+
+Source: Shrek complete manual, IO driver board schematics
+
+List of connectors:
+
+J10 : 50VDC output and 24VAC output (motor)
+J11 : AC voltage input (24V AC and 48V AC)
+
+J15 : General Illumination
+J13 : Lamp column
+J12 : Lamp rows ground
+
+J9 = High current solenoids
+J8 = High current solenoids
+J7 = Low current solenoids
+J6 = Flash Lamps
+
+J3 = Aux input
+J2 = Aux output
+
+
+Connector J1 (CPU board input)
+
+Pin 1 to 8:
+
+10k pull-down A1 to A8 input on transceiver 74HC245 (Ax listed below are transceiver input, pins 2 to 9)
+
+1 =  BD3 = A4 transceiver input = D3
+2 =  BD4 = A5 transceiver input = D4
+3 =  BD2 = A3 transceiver input = D2
+4 =  BD5 = A6 transceiver input = D5
+5 =  BD1 = A2 transceiver input = D1
+6 =  BD6 = A7 transceiver input = D6
+7 =  BD0 = A1 transceiver input = D0
+8 =  BD7 = A8 transceiver input = D7
+
+Pin 12 to 20
+
+12 = A0 signal
+14 = A1 signal
+16 = A2 signal
+18 = A3 signal
+15 = IOSTB
+
+All signals are pulled-up to 5V with 4.7k resistor, except NBReset
+
+13 = NBRESET
+
+20 = Ground
