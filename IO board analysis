@@ -16,8 +16,11 @@ J8 = High current solenoids
 J7 = Low current solenoids
 J6 = Flash Lamps
 
-J3 = Aux input
 J2 = Aux output
+
+J3 = Aux input
+Note : pins 9 to 12 are actually on J3 are actually OUTPUT
+Pins 1 to 8 are INPUT, driven to the main databus through a reversed transceiver. Probably used to read data for specific use cases
 
 
 Connector J1 (CPU board input)
@@ -46,5 +49,89 @@ Pin 12 to 20
 All signals are pulled-up to 5V with 4.7k resistor, except NBReset
 
 13 = NBRESET
-
 20 = Ground
+
+A0 to A3 signals + IO STB are connected to two 74LS138 decoder
+
+First decoder chip
+
+Input
+
+A0 to A2 connected to 3 bits input on 74LS138
+A3 = /E2 
+IOSTB = /E1
+E3 = 5V
+
+Output
+/Y0 = SOL A
+/Y1 = SOL B
+/Y2 = SOL C
+/Y3 = FLSH LMP
+/Y5 = STATUS
+/Y6 = AUX_DRV
+/Y7 = AUX_IN
+
+Second decoder chip
+A0 to A2 connected to 3 bits input on 74LS138
+A3 = E3 
+/E2 = GND
+
+/Y0 = LMP_STB
+/Y1 = AUX_LAMP
+/Y2 = LMP_DRV
+/Y3 = CLK input to 74HCT276 flip flop, used to drive 4 strobes on J3 connector (see above)
+
+
+Decoding analytics:
+
+Based on 74LS138 datasheet
+
+IOSTB controls output of both decoder chip
+A3 control which decoder chip is used
+A3 = Low : First decoder chip
+A3 = High: Second decoder chip
+
+A0 to A2 are decoded from 3 bits to 8 bits, with the following table
+
+A2 A1 A0 = SOL A / SOL B / SOL C / FLSH_LMP / NA / STATUS / AUX_DRV / AUX_IN
+
+000 = 1 0 0 0 0 0 0 0
+001 = 0 1 0 0 0 0 0 0
+010 = 0 0 1 0 0 0 0 0
+011 = 0 0 0 1 0 0 0 0
+100 = 0 0 0 0 1 0 0 0
+101 = 0 0 0 0 0 1 0 0
+110 = 0 0 0 0 0 0 1 0
+111 = 0 0 0 0 0 0 0 1
+
+if A3 is high, all outputs are set to 1, so decoding is done by second decoder chip
+
+A2 A1 A0 = LMP_STB / AUX_LMP / LMP_DRV / CLK_INPUT aux
+
+000 = 1 0 0 0 0 0 0 0
+001 = 0 1 0 0 0 0 0 0
+010 = 0 0 1 0 0 0 0 0
+011 = 0 0 0 1 0 0 0 0
+
+additionnal output are not used
+
+
+Connector assignment:
+
+J6 = FLSH_LMP
+J7 = SOL_C
+J8 = SOL_B
+J9 = SOL_A
+J12 = LMP_STB
+J13 = LMP_DRV
+J15 = RLY_DRV = General illumination
+
+Each output of the decoder is connected to an octal D-type flip flop clock input, active from low to high
+
+Analysis:
+
+CPU board is responsible for activating coils / flashers AND turn them off.
+Adress bus is used to select "bank", Data bus matches what needs to be driven on the selected bank
+Important = CPU boards NEEDS to turn off coils / flashers, since flip flop will keep state output unless there is a low to high transition
+
+Lamp matrix operates through J12 and J13 (LMP_STB and LMP_DRV)
