@@ -1,0 +1,116 @@
+
+J2 = AUX_DRV
+J3 = AUX_IN
+J6 = FLSH_LMP
+J7 = SOL_C
+J8 = SOL_B
+J9 = SOL_A
+J12 = LMP_STB
+J13 = LMP_DRV
+J15 = RLY_DRV = General illumination
+
+J12 = LMP_STB
+
+bit 0 = Q37
+bit 1 = Q38
+bit 2 = Q39
+bit 3 = Q40
+bit 4 = Q33
+bit 5 = Q34
+bit 6 = Q35
+bit 7 = Q36
+
+Additionnal lamp strobe on J12
+
+AUX_LAMP D0 = DRV_8 = Q41
+AUX_LAMP D1 = DRV_9 = Q42
+
+J8 = SOL_B
+
+bit 0 = Q5
+bit 1 = Q6
+bit 2 = Q7
+bit 3 = Q8
+bit 4 = Q1
+bit 5 = Q2
+bit 6 = Q3
+bit 7 = Q4
+
+J9 = SOL_A
+
+bit 0 = Q13
+bit 1 = Q14
+bit 2 = Q15
+bit 3 = Q16
+bit 4 = Q9
+bit 5 = Q10
+bit 6 = Q11
+bit 7 = Q12
+
+J6 = FLSH_LMP
+
+bit 0 = Q29
+bit 1 = Q30
+bit 2 = Q31
+bit 3 = Q32
+bit 4 = Q25
+bit 5 = Q26
+bit 6 = Q27
+bit 7 = Q28
+
+J7 = SOL_C
+
+bit 0 = Q21
+bit 1 = Q22
+bit 2 = Q23
+bit 3 = Q24
+bit 4 = Q17
+bit 5 = Q18
+bit 6 = Q19
+bit 7 = Q20
+
+J2 = AUX_DRV
+
+bit 0 = pin 6
+bit 1 = pin 7
+bit 2 = pin 8
+bit 3 = pin 9
+bit 4 = pin 1
+bit 5 = pin 2
+bit 6 = pin 3
+bit 7 = pin 5
+
+ASTB = pin 10
+
+J13 = LMP_DRV
+
+bit 0 = pin 9
+bit 1 = pin 8
+bit 2 = pin 7
+bit 3 = pin 6
+bit 4 = pin 5
+bit 5 = pin 4
+bit 6 = pin 3
+bit 7 = pin 1
+
+Clk_input_aux
+
+bit 0 = RLY_DRV
+bit 1
+bit 2
+bit 3 = ASTB
+bit 4 = ESTB = J3 pin 12
+bit 5 = DSTB = J3 pin 11
+bit 6 = CSTB = J3 pin 10
+bit 7 = BSTB = J3 pin 9
+
+J3 = AUX_IN
+
+bit 0 = pin 1
+bit 1 = pin 2
+bit 2 = pin 3
+bit 3 = pin 4
+bit 4 = pin 5
+bit 5 = pin 6
+bit 6 = pin 7
+bit 7 = pin 8
