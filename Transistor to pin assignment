@@ -11,19 +11,30 @@ J15 = RLY_DRV = General illumination
 
 J12 = LMP_STB
 
-bit 0 = Q37
-bit 1 = Q38
-bit 2 = Q39
-bit 3 = Q40
-bit 4 = Q33
-bit 5 = Q34
-bit 6 = Q35
-bit 7 = Q36
+J12 pin 1 = LMP_STB bit 4 = Q33
+J12 pin 2 = LMP_STB bit 5 = Q34
+J12 pin 3 = LMP_STB bit 6 = Q35
+J12 pin 4 = LMP_STB bit 7 = Q36
+J12 pin 5 = LMP_STB bit 0 = Q37
+J12 pin 6 = LMP_STB bit 1 = Q38
+J12 pin 7 = LMP_STB bit 2 = Q39
+J12 pin 8 = LMP_STB bit 3 = Q40
 
 Additionnal lamp strobe on J12
 
-AUX_LAMP D0 = DRV_8 = Q41
-AUX_LAMP D1 = DRV_9 = Q42
+J12 pin 9  = AUX_LAMP D0 = DRV_8 = Q41
+J12 pin 10 = AUX_LAMP D1 = DRV_9 = Q42
+
+J13 = LMP_DRV
+
+J13 pin 9 = bit 0 = Drive 1
+J13 pin 8 = bit 1 = Drive 2
+J13 pin 7 = bit 2 = Drive 3
+J13 pin 6 = bit 3 = Drive 4
+J13 pin 5 = bit 4 = Drive 5
+J13 pin 4 = bit 5 = Drive 6
+J13 pin 3 = bit 6 = Drive 7
+J13 pin 1 = bit 7 = Drive 8
 
 J8 = SOL_B
 
@@ -79,19 +90,7 @@ bit 4 = pin 1
 bit 5 = pin 2
 bit 6 = pin 3
 bit 7 = pin 5
-
 ASTB = pin 10
-
-J13 = LMP_DRV
-
-bit 0 = pin 9
-bit 1 = pin 8
-bit 2 = pin 7
-bit 3 = pin 6
-bit 4 = pin 5
-bit 5 = pin 4
-bit 6 = pin 3
-bit 7 = pin 1
 
 Clk_input_aux
 
