@@ -18,6 +18,7 @@ A3 A2 A1 A0 = SOL A / SOL B / SOL C / FLSH_LMP / NA / STATUS / AUX_DRV / AUX_IN 
 1010 = 0 0 0 0 0 0 0 0 0 0 1 0
 1011 = 0 0 0 0 0 0 0 0 0 0 0 1
 
+J2 = AUX_DRV
 J6 = FLSH_LMP
 J7 = SOL_C
 J8 = SOL_B
@@ -25,6 +26,7 @@ J9 = SOL_A
 J12 = LMP_STB
 J13 = LMP_DRV
 J15 = RLY_DRV = General illumination
+
 
 Each output of the decoder is connected to an octal D-type flip flop clock input, active from low to high
 
